@@ -1,13 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard | Shopping Cart</title>
-</head>
-<body>
-    <h1>Successfully Log In!</h1>
-    <a href="login-form.php">Logout</a>
-</body>
-</html>
+<?php require_once('header.php') ?>
+<?php
+    $_SESSION['CURR_PAGE'] = 'dashboard';
+?>
+<div class="container-fluid">
+  <div class="row">
+     <?php require_once('nav.php') ?>
+
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Dashboard</h1>
+      </div>
+    </main>
+  </div>
+</div>
+
+<?php require_once('footer.php') ?>
