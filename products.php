@@ -1,10 +1,10 @@
 <?php require_once('header.php') ?>
 <?php
     $_SESSION['CURR_PAGE'] = 'products';
-    require_once('function.php');
+    require_once("function.php");
 ?>
 <?php
-  if(isset($_REQUEST['btnAdd'])){
+  if(isset($_REQUEST['btnAdd'])) {
     $con = openConnection();
 
     $name = CleanInput($con, $_REQUEST['txtProdName']);
@@ -16,33 +16,30 @@
     $err = [];
 
     if(empty($name))
-      $err[] = "Product Name is required!";
+        $err[] = "Product Name is required!";
     if(empty($description))
-      $err[] = "Product description is required!";
+        $err[] = "Product Description is required!";
     if(empty($price))
-      $err[] = "Product price is required!";
-    if(empty($photo1))
-      $err[] = "Product Photo1 is required!";
-    if(empty($Photo2))
-      $err[] = "Product Photo2 is required!";
+        $err[] = "Product Price is required!";
 
     if(empty($err)){
-      $strSql ="
-              INSERT INTO tbl_products (name, description, price, photo1, photo2)
-              VALUES ('$name','$description','$price','$photo1','$Photo2')
-      ";
-      if(mysqli_query($con, $strSql)){
-        echo '
-            <div class="alert alert-success alert-dismissible fade show col-4 offset-4 mt-5" role="alert">
-                <strong>Product Successfully Added!</strong>
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-        ';
-      }
-      else
-        echo 'ERROR: Failed to insert Record!';
+        $strSql = "
+                  INSERT INTO tbl_products (name, description, price, photo1, photo2) 
+                  VALUES ('$name', '$description', '$price', '$photo1', '$photo2')
+                ";  
+        
+        if(mysqli_query($con, $strSql)){
+          echo '
+                    <div class="alert alert-success alert-dismissible fade show col-4 offset-4 mt-5" role="alert">
+                        <strong>Successfully Added a Product!</strong>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                ';
+        }
+        else
+          echo 'ERROR: Failed to insert Record!';
     }
     closeConnection($con);
   }
@@ -127,8 +124,8 @@
                           echo '<td>'. $value['photo1'] .'</td>';
                           echo '<td>'. $value['photo2'] .'</td>';
                           echo '<td>';
-                              echo '<a href="" class="btn btn-success"><i class="fa-solid fa-pen-to-square"></i> Edit</a>';
-                              echo '<a href="" class="btn btn-danger"><i class="fa-solid fa-trash"></i> Edit</a>';
+                              echo '<a href="edit-product.php?k=' . $value['id'] . '" class="btn btn-success"><i class="fa-solid fa-pen-to-square"></i> Edit</a>';
+                              echo '<a href="remove-product.php?k=' . $value['id'] . '" class="btn btn-danger"><i class="fa-solid fa-trash"></i> Edit</a>';
                           echo '</td>';
                   echo '</tr>';
                 }
