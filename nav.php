@@ -10,7 +10,13 @@
         <li class="nav-item">
         <a class="nav-link <?php echo($_SESSION['CURR_PAGE'] == 'products' ? 'active': 'text-secondary'); ?>" href="products.php">
             <span data-feather="file" class="align-text-bottom"></span>
-            <i class="fa-solid fa-cart-shopping"></i> Products
+            <i class="fa-brands fa-product-hunt"></i> Products
+        </a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link text-secondary" href="shopping-cart/index.php" target="_blank">
+            <span data-feather="file" class="align-text-bottom"></span>
+            <i class="fa-solid fa-cart-shopping"></i> Schopping Cart
         </a>
         </li>
     </ul>
