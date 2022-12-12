@@ -80,7 +80,7 @@
         <i class="fa-solid fa-user"></i>
         </button>
         <div class="dropdown-menu dropdown-menu-right">
-            <a class="dropdown-item" href="#">Change Password</a>
+            <a class="dropdown-item" href="change-password.php">Change Password</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="logout.php">Log Out</a>
         </div>

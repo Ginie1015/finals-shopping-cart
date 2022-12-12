@@ -36,4 +36,34 @@
     function CleanInput($con, $input){
         return mysqli_real_escape_string($con, stripslashes(htmlspecialchars($input)));
     }
+    function validatePass($con, $strSql, $new, $confirm){
+        if($rsLogin = mysqli_query($con, $strSql)){
+            if(mysqli_num_rows($rsLogin) > 0){
+                if($new == $confirm){
+                    header("location: logout.php");
+                    mysql_free_result($rsLogin);
+                }
+                else
+                    echo '
+                        <div class="alert alert-danger alert-dismissible fade show col-4 offset-4 mt-5" role="alert">
+                            <strong>Password Mismatch!</strong>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    ';
+            }
+            else
+                echo '
+                    <div class="alert alert-danger alert-dismissible fade show col-4 offset-4 mt-5" role="alert">
+                        <strong>Invalid Username/Password!</strong>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                ';
+        }
+        else
+            die("ERROR: Could not execute query");
+    }
 ?>
