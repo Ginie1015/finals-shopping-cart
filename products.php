@@ -80,13 +80,13 @@
         <div class="form-group row">
           <label for="photo1" class="col-sm-2 col-form-label text-right">Photo1</label>
           <div class="col-sm-2">
-            <input type="file" name="photo1" id="photo1" required>
+            <input type="file" name="photo1" id="photo1" accept="image/*" required>
           </div>
         </div>
         <div class="form-group row">
           <label for="photo2" class="col-sm-2 col-form-label text-right">Photo2</label>
           <div class="col-sm-9">
-            <input type="file" name="photo2" id="photo2" required>
+            <input type="file" name="photo2" id="photo2" accept="image/*" required>
           </div>
         </div>
         <div class="form-group row">
