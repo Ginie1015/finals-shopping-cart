@@ -32,6 +32,7 @@
         <div class="card card-container">  
             <i class="fa-solid fa-user text-center fa-5x"></i>
             <p id="profile-name" class="profile-name-card"></p>
+            <h1 class="text-center">Login</h1>
             <form class="form-signin" method="post">
                 <input type="text" name="txtUsername" id="txtUsername" class="form-control" placeholder="User Name" required autofocus>
                 <input type="password" name="txtPassword" id="txtPassword" class="form-control" placeholder="Password" required>                
