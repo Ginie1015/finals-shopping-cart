@@ -34,6 +34,7 @@
         <div class="card card-container">  
             <i class="fa-solid fa-user text-center fa-5x"></i>
             <p id="profile-name" class="profile-name-card"></p>
+            <h2 class="text-center">Change Password</h2>
             <form class="form-signin" method="post">
                 <input type="text" name="txtCurUsername" id="txtCurUsername" class="form-control" placeholder="User Name" required autofocus>
                 <input type="password" name="txtCurPass" id="txtCurPass" class="form-control" placeholder="Current Password" required>  
